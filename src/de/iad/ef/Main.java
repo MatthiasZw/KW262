@@ -19,5 +19,5 @@ public class Main {
             System.out.println("Keine Abbuchung - bitte reden Sie mit der Bank");
         }
         System.out.println(konto.display());
-    }
+    }  //
 }
