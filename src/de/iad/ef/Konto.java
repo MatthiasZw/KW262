@@ -6,9 +6,11 @@ package de.iad.ef;
  +-------------------------------+
  | - int kontoNr			|
  | - float saldo			|
+ | - float kk
  | - String name			|
  +-------------------------------+
  | + Konto( String inhaber)	|
+ | + Konto( String inhaber, float kk) |
  | + bool buchung(float betrag)	|
  | + String display()		|
  +-------------------------------+
@@ -17,16 +19,26 @@ public class Konto {
     private int kontoNr;
     private float saldo;
     private String name;
+    private float kk;
 
-    public Konto(String inhaber){
-        //System.out.println("Ein konto wurde erzeugt! ");
+    public Konto(String inhaber) {
+        this(inhaber , 0.0f); // Aufruf des Konbstruktors mit den meisten Parametern
+        // Ersetzen der fehlenden Parameter mit Default Werten
+        // this.name= inhaber;
+    }
+    public Konto(String inhaber, float kk){
+        this.kk= kk;
         this.name=inhaber;
     }
     public boolean buchung(float betrag){
         /*Nach Refactoring */
-        if(betrag < 0 && Math.abs(betrag) >this.saldo){
+        float saldo = this.saldo + this.kk;
+        if(betrag < 0 && Math.abs(betrag) >saldo ){
             return  false;
         }
+
+        // Kontorrent ausnutzen
+
         this.saldo+=betrag;
         return  true;
         // Einzahlung  vor Refactoring -- Funktioniert!!!!
