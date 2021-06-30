@@ -23,4 +23,13 @@ public Mitarbeiter(String name, double gehalt){
         sb.append(", gehalt=").append(gehalt).append("Euro");
         return sb.toString();
     }
+
+    protected void setGehalt(float gehalt) {
+        this.gehalt = gehalt;
+    }
+
+    public void Gehaltserhöhung() {
+        this.gehalt+=20;
+
+    }
 }

@@ -36,11 +36,15 @@ public class Chef extends Mitarbeiter{
 
     @Override
     public String toString() {
-
-        return "Chef{" +
-                "boni=" + boni +
-                '}'+ super.toString();
+        return super.toString() + " ist ein(e)" + getClass().getSimpleName()+
+                "(e) und bekommt " + this.boni + "Euro Boni";
     }
-}
+    @Override
+    public void Gehaltserhöhung(){
+    super.setGehalt((float)super.getGehalt()*1.2f);
+    super.Gehaltserhöhung();
+    }
+    }
+
 
 
