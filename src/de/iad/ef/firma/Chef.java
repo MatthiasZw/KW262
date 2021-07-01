@@ -5,7 +5,7 @@ public class Chef extends Mitarbeiter{
     private float boni;
 
     public Chef(String name, double gehalt) {
-        super(name, gehalt);
+        this(name, gehalt,0);
     }
 
     public Chef(String name, double gehalt, double boni) {
@@ -27,7 +27,7 @@ public class Chef extends Mitarbeiter{
     }
 
     public void setBoni(float boni) {
-        if (boni<=0) return;
+        if (boni<=this.boni) return;
         this.boni = boni;
 
 
@@ -39,6 +39,12 @@ public class Chef extends Mitarbeiter{
         return super.toString() + " ist ein(e)" + getClass().getSimpleName()+
                 "(e) und bekommt " + this.boni + "Euro Boni";
     }
+
+    @Override
+    protected void setGehalt(float gehalt){
+        super.setGehalt(gehalt);
+    }
+
     @Override
     public void Gehaltserhöhung(){
     super.setGehalt((float)super.getGehalt()*1.2f);

@@ -20,6 +20,7 @@ public class Application {
         System.out.println("Vor Gehaltserhöhung:  ");
         for (Mitarbeiter m : iad) {
             System.out.println(m);
+            m.Gehaltserhöhung();
 
         }
         System.out.println("Nach Gehaltserhöhung: ");
